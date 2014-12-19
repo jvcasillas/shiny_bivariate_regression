@@ -24,7 +24,7 @@ shinyUI(fluidPage(
                           href="http://www.jvcasillas.com")),
             strong("Source code:", 
                    tags$a("Github", 
-                          href="https://github.com/jvcasill/shiny_crossOver/"))
+                          href="https://github.com/jvcasill/shiny_bivariate_regression/"))
         ),
         
         mainPanel(
