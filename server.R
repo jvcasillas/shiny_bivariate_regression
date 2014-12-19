@@ -48,6 +48,6 @@ shinyServer(function(input, output) {
         stargazer(fit, type = 'html', single.row=TRUE, 
                   ci=TRUE, ci.level=0.95, align=FALSE,
                   covariate.labels = c("x", "Intercept"), 
-                  dep.var.labels = "y")
+                  dep.var.labels = "y", keep.stat=c("n", "F", "rsq"))
     })
 })
