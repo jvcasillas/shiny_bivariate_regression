@@ -2,7 +2,11 @@ library(shiny); library(stargazer)
 set.seed(1)
 
 shinyServer(function(input, output) {
-
+    output$currentTime <- renderText({
+        invalidateLater(1000)
+        paste(Sys.time())
+    })
+    
     x <- reactive({
         x <- runif(input$n)
     })
@@ -34,7 +38,7 @@ shinyServer(function(input, output) {
         stargazer(fit, type = 'html', single.row=TRUE, 
                   ci=TRUE, ci.level=0.95, align=FALSE,
                   covariate.labels = c("x", "Intercept"), 
-                  dep.var.labels = "y", keep.stat=c("n", "F", "rsq"))
+                  dep.var.labels = "y")
     })
     
     output$resid <- renderPlot({
@@ -48,6 +52,6 @@ shinyServer(function(input, output) {
         stargazer(fit, type = 'html', single.row=TRUE, 
                   ci=TRUE, ci.level=0.95, align=FALSE,
                   covariate.labels = c("x", "Intercept"), 
-                  dep.var.labels = "y", keep.stat=c("n", "F", "rsq"))
+                  dep.var.labels = "y")
     })
 })
