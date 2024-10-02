@@ -6,9 +6,10 @@ set.seed(1)
 
 # Define UI for app that draws a histogram ----
 ui <- 
-shinyUI(
+  shinyUI(
 
-    navbarPage("Bivariate linear regression",
+    navbarPage(title = "Bivariate linear regression", 
+               windowTitle = "Bivariate linear regression",
 
         tabPanel("Overview",
             fluidRow(
